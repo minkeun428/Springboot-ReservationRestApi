@@ -13,10 +13,12 @@ repositories {
     jcenter()   // 해당 저장소는 라이브러리 업로드를 간단하게 함. mavenCentral에도 업로드 자동화 가능함.
 }
 
+
 // 개발에 필요한 의존성들을 선언하는 곳
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    // spring-boot-starter-test와 같이 선언되면 테스트 불가.
+    // testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    // testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     implementation('org.springframework.boot:spring-boot-starter-web')
