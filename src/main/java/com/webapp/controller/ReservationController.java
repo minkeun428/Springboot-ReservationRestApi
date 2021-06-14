@@ -2,13 +2,15 @@ package com.webapp.controller;
 
 import com.webapp.dto.ReservationDto;
 import com.webapp.service.ReservationService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@ResponseBody 선언이 포함된 Controller
-@RestController
+
+@RequiredArgsConstructor    // final로 선언된 필드를 인자 값으로 하는 생성자를 대신 생성해줌
+@RestController             // @ResponseBody 선언이 포함된 Controller
 public class ReservationController {
 
     /**
@@ -20,13 +22,16 @@ public class ReservationController {
      * Put은 여러 요청을 보내도 200과 같은 응답을 받음.
      **/
 
-
-    // 생성자로 의존성 주입
-    // ApiController는 ReservationService 없인 아무것도 못함
-    private ReservationService service;
+    /** @RequiredArgsConstructor 사용으로 제거 가능
     public ReservationController(ReservationService service) {
         this.service = service;
     }
+     **/
+
+    // 생성자로 의존성 주입
+    // ApiController는 ReservationService 없인 아무것도 못함
+    // 대신, RequiredArgsConstructor를 사용했기 때문에, 해당 의존성이 변경되도 해당 코드 수정할 필요 없음.
+    private final ReservationService service;
 
 
     // get 방식의 메소드로 value 값처럼 넘겨주면 해당 메소드를 호춣하겠다. => RequestMaping으로 정의함

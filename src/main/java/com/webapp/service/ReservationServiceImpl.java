@@ -2,20 +2,17 @@ package com.webapp.service;
 
 import com.webapp.dto.ReservationDto;
 import com.webapp.mapper.ReservationMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class ReservationServiceImpl implements ReservationService{
 
-    private ReservationMapper reservationMapper;
-    public ReservationServiceImpl(ReservationMapper reservationMapper) {
-        this.reservationMapper = reservationMapper;
-    }
+    private final ReservationMapper reservationMapper;
+
 
     // 예약 전체 조회
     @Override
