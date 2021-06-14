@@ -3,8 +3,6 @@ package com.webapp.service;
 import com.webapp.dto.ReservationDto;
 import org.apache.ibatis.annotations.*;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 public interface ReservationService {
