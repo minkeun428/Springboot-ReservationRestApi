@@ -45,6 +45,7 @@ public class ReservationController {
     }
 
     // 예약 상세 조회
+    // @PathVariable => 해당 매개 변수가 URI 템플릿 변수에 바인딩되어야 함을 명시함
     @GetMapping("/reservation/{id}")
     public ReservationDto getReservation(@PathVariable("id") String id) {
 
