@@ -1,6 +1,5 @@
 package com.webapp.controller;
 
-import com.google.gson.Gson;
 import com.webapp.dto.ReservationDto;
 import com.webapp.service.ReservationService;
 import org.junit.jupiter.api.DisplayName;
