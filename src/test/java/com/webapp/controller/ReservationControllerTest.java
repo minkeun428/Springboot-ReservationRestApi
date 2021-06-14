@@ -1,5 +1,6 @@
 package com.webapp.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = ReservationController.class)  // 여러 스프링 테스트 어노테이션 중, MVC에 집중할 수 있는 어노테이션임.
 public class ReservationControllerTest {
 
-    @Autowired   // 스프링이 관리하는 빈 주입 받기
-    private MockMvc mvc;    // 웹 API 테스트용, 테스트 시작점.
+    // 장점: WebApplication 관련된 Bean들만 등록하기 때문에 통합 테스트보다 빠르다
+    // 단점: 요청부터 응답까지 모든 테스트를 Mock 기반으로 테스트하기 때문에 실제 환경에서는 제대로 동작하지 않을 수 있다.
+    @Autowired
+    private MockMvc mvc;
 
     @Test
     public void hello가_리턴된다() throws Exception {
