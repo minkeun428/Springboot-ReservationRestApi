@@ -9,7 +9,7 @@ import java.util.List;
 
 //@ResponseBody 선언이 포함된 Controller
 @RestController
-public class ApiController {
+public class ReservationController {
 
     /**
      * Post vs Put
@@ -24,7 +24,7 @@ public class ApiController {
     // 생성자로 의존성 주입
     // ApiController는 ReservationService 없인 아무것도 못함
     private ReservationService service;
-    public ApiController(ReservationService service) {
+    public ReservationController(ReservationService service) {
         this.service = service;
     }
 
